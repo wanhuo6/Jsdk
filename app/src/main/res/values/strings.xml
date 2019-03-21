@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Jsdk</string>
+    <string name="app_name_sdk">Jsdk</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="sdk_action_settings">Settings</string>
+    <string name="openpop">打开插屏</string>
+    <string name="closepop">关闭插屏</string>
 </resources>
