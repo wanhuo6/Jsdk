@@ -46,7 +46,7 @@ public class WMDownLoad {
 		if (p != null)
 		{
 			//正在下载
-			Toast.makeText(act, String.format("已在下载%s", url), 0).show();
+			Toast.makeText(act, String.format("已在下载%s", url), Toast.LENGTH_SHORT).show();
 			return;
 		}
 		else
@@ -115,7 +115,7 @@ public class WMDownLoad {
 				//Notification notification = (Notification) msg.obj;
 
 				if (100 == len) {
-					Toast.makeText(act, "下载完成, 准备安装", 0).show();
+					Toast.makeText(act, "下载完成, 准备安装", Toast.LENGTH_SHORT).show();
 					Intent intent = new Intent(Intent.ACTION_VIEW);
 					intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 					intent.setDataAndType(Uri.fromFile(new File(filename)),"application/vnd.android.package-archive");
@@ -123,12 +123,12 @@ public class WMDownLoad {
 
 				}
 			} else if (102 == msg.arg1) {
-				Toast.makeText(act, "下载完成, 准备安装", 0).show();
+			/*	Toast.makeText(act, "下载完成, 准备安装", Toast.LENGTH_SHORT).show();
 
 				Intent intent = new Intent(Intent.ACTION_VIEW);
 				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				intent.setDataAndType(Uri.fromFile(new File(filename)),"application/vnd.android.package-archive");
-				act.startActivity(intent);
+				act.startActivity(intent);*/
 
 			}
 		};

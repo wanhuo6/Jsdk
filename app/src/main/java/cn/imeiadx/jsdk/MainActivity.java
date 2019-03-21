@@ -1,10 +1,11 @@
 package cn.imeiadx.jsdk;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,8 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private String pid = "DAOOVC5SHVFTXACPPLL0";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -44,12 +44,9 @@ public class MainActivity extends AppCompatActivity {
                 getPackageName()));
 
         WLog.d(getPackageName());
-        if (permission)
-        {
+        if (permission) {
             WLog.d("有这个权限");
-        }
-        else
-        {
+        } else {
             WLog.d("木有这个权限");
         }
 
@@ -67,20 +64,15 @@ public class MainActivity extends AppCompatActivity {
         this.addContentView(adv, params);
 
         Button openbtn = (Button) findViewById(R.id.openbtn);
-        openbtn.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
-                if (mPopupWindow == null)
-                {
+        openbtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (mPopupWindow == null) {
                     // new ColorDrawable(0x7DC0C0C0) 半透明灰色
                     mPopupWindow = JyAd.initPopWindow(act, pid, 300, 250, null,
                             new ColorDrawable(0x7DC0C0C0));
-                    JyAdListener l = new JyAdListener()
-                    {
+                    JyAdListener l = new JyAdListener() {
                         @Override
-                        public void onClosed()
-                        {
+                        public void onClosed() {
                             // 加入广告插屏关闭时响应
                             WLog.d("JyAdListener.onClosed");
                             mPopupWindow = null;
@@ -94,12 +86,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button closebtn = (Button) findViewById(R.id.closebtn);
-        closebtn.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
-                if (mPopupWindow != null)
-                {
+        closebtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (mPopupWindow != null) {
                     mPopupWindow.dismiss();
                 }
             }
@@ -107,22 +96,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
+    public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
+    public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+        Intent intent = new Intent(this, TestWebViewActivity.class);
+        startActivity(intent);
         int id = item.getItemId();
-        if (id == R.id.action_settings)
-        {
+        if (id == R.id.action_settings) {
             return true;
         }
         return super.onOptionsItemSelected(item);
