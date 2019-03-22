@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.Menu;
@@ -18,6 +19,9 @@ import cn.imeiadx.jsdk.mob.JyAdListener;
 import cn.imeiadx.jsdk.mob.JyAdPopWindow;
 import cn.imeiadx.jsdk.mob.JyAdView;
 import cn.imeiadx.jsdk.mob.WLog;
+import cn.imeiadx.jsdk.test.JyWebViewActivity;
+import cn.imeiadx.jsdk.test.TestJs;
+import cn.imeiadx.jsdk.test.TestWebViewActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        startActivity(new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS));
         // if(checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) !=
         // PackageManager.PERMISSION_GRANTED) {
         // // requestPermissions(
@@ -107,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        Intent intent = new Intent(this, TestWebViewActivity.class);
+        Intent intent = new Intent(this, JyWebViewActivity.class);
         startActivity(intent);
         int id = item.getItemId();
         if (id == R.id.action_settings) {

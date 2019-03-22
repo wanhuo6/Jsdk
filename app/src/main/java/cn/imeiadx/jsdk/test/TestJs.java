@@ -1,4 +1,4 @@
-package cn.imeiadx.jsdk;
+package cn.imeiadx.jsdk.test;
 
 import android.webkit.JavascriptInterface;
 

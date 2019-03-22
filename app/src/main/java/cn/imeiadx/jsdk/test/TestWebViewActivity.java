@@ -1,4 +1,4 @@
-package cn.imeiadx.jsdk;
+package cn.imeiadx.jsdk.test;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -14,6 +14,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import cn.imeiadx.jsdk.R;
 import cn.imeiadx.jsdk.mob.WMDownLoad;
 
 /**

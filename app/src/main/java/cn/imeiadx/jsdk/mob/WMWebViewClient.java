@@ -272,8 +272,8 @@ public class WMWebViewClient extends WebViewClient {
 
 			WifiManager wm = (WifiManager) act.getApplicationContext()
 					.getSystemService(Context.WIFI_SERVICE);
-			String mac = wm.getConnectionInfo().getMacAddress();
-			mac = URLEncoder.encode(mac, "utf-8");
+		//	String mac = wm.getConnectionInfo().getMacAddress();
+		//	mac = URLEncoder.encode(mac, "utf-8");
 
 			Display display = act.getWindowManager().getDefaultDisplay();
 			int width = display.getWidth();
