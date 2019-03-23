@@ -3,8 +3,6 @@
  */
 package cn.imeiadx.jsdk.util;
 
-import android.util.Log;
-
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -167,7 +165,6 @@ public class ECoding
 		}
 		return hexString.toString();
 	}
-
 	/**
 	 * @param args
 	 */
